@@ -88,6 +88,4 @@ loops.everyInterval(fallTimer, function () {
     }
     else {
         fall(dot, displayData)
-    }
-    fallTimer = fallTimer - 20;
-    })
+    }})
