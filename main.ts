@@ -35,8 +35,18 @@ function scoreDropEnd(coord: Xy, display: Display){
     if (display[coord.y].every((test) => {return test === true})){
         for (let x = 0; x < 5; x++) {
                 display[coord.y][x] = false;
+        } 
+        for (let y = 4; y > 0 ; y--) {
+            for (let x = 0; x < 5; x++) {
+                if (display[y][x]) {
+                    display[y][x] = false;
+                    display[y+1][x] = true;
+                }
+            }
         }
+
     }
+
     coord.y = 0;
     coord.x = 2;
     if(display[coord.y + 1][coord.x]){
